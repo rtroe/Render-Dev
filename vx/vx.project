@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="vx" Version="11000" InternalType="Library">
+  <VirtualDirectory Name="entities">
+    <File Name="entities/vxEditorGrid.cpp"/>
+    <File Name="entities/vxEditorGrid.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="lib">
+    <VirtualDirectory Name="imgui">
+      <File Name="lib/imgui/backends/imgui_impl_sdl.cpp"/>
+      <File Name="lib/imgui/backends/imgui_impl_opengl3.cpp"/>
+      <File Name="lib/imgui/imstb_truetype.h"/>
+      <File Name="lib/imgui/imstb_textedit.h"/>
+      <File Name="lib/imgui/imstb_rectpack.h"/>
+      <File Name="lib/imgui/imgui_widgets.cpp"/>
+      <File Name="lib/imgui/imgui_tables.cpp"/>
+      <File Name="lib/imgui/imgui_internal.h"/>
+      <File Name="lib/imgui/imgui_draw.cpp"/>
+      <File Name="lib/imgui/imgui_demo.cpp"/>
+      <File Name="lib/imgui/imgui.h"/>
+      <File Name="lib/imgui/imgui.cpp"/>
+      <File Name="lib/imgui/imconfig.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="glad">
+      <VirtualDirectory Name="src">
+        <File Name="lib/glad/src/glad.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="components">
+    <File Name="components/component.cpp"/>
+    <File Name="components/component.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="core">
+    <File Name="core/Input.h"/>
+    <File Name="core/game.cpp"/>
+    <File Name="core/vertices.h"/>
+    <File Name="core/scene.h"/>
+    <File Name="core/camera.h"/>
+    <File Name="core/scene.cpp"/>
+    <File Name="core/entity.h"/>
+    <File Name="core/vertices_init.h"/>
+    <File Name="core/camera.cpp"/>
+    <File Name="core/vertices.cpp"/>
+    <File Name="core/time.h"/>
+    <File Name="core/game.h"/>
+    <File Name="core/time.cpp"/>
+    <File Name="core/vertices_types.h"/>
+    <File Name="core/vertices_debug.h"/>
+    <File Name="core/entity.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="graphics">
+    <File Name="graphics/mesh.cpp"/>
+    <File Name="graphics/material.cpp"/>
+    <File Name="graphics/graphics.h"/>
+    <File Name="graphics/mesh.h"/>
+    <File Name="graphics/graphics.cpp"/>
+    <File Name="graphics/material.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="platforms">
+    <File Name="platforms/VerticesEnginePlatforms.h"/>
+    <File Name="platforms/VerticesEngineSDLWrapper.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="util">
+    <File Name="util/debug.cpp"/>
+    <File Name="util/debug.h"/>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-fPIC" C_Options="-g;-fPIC" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/glad/include"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends"/>
+      </Compiler>
+      <Linker Options="-lSDL2;-lGL;-ldl" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="lib$(ProjectName).so" IntermediateDirectory="$(WorkspacePath)/obj" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/obj" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="CodeLite Makefile Generator"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(ProjectName)" IntermediateDirectory="" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/lib" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="CodeLite Makefile Generator"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
