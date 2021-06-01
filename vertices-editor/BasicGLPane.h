@@ -1,23 +1,17 @@
-#pragma once
-
-#include <vx/core/vertices.h>
-#include <vx/core/vertices_debug.h>
-#include <vx/core/game.h>
-
-
+/*#pragma once
 #ifndef _glpane_
 #define _glpane_
  
 #include "wx/wx.h"
 #include "wx/glcanvas.h"
  
-class RenderViewControl : public wxGLCanvas
+class BasicGLPane : public wxGLCanvas
 {
     wxGLContext*	m_context;
 
 public:
-	RenderViewControl(wxPanel* parent, int* args);
-	virtual ~RenderViewControl();
+	BasicGLPane(wxPanel* parent, int* args);
+	virtual ~BasicGLPane();
     
 	void resized(wxSizeEvent& evt);
     
@@ -40,4 +34,4 @@ public:
     
 	DECLARE_EVENT_TABLE()
 };
-#endif
+#endif*/

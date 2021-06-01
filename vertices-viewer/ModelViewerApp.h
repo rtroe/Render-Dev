@@ -6,4 +6,5 @@ class ModelViewerApp : public vxGame
 {
 public:
     ModelViewerApp();
+    void Update();
 };

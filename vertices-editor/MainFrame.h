@@ -1,5 +1,10 @@
 #ifndef MAINFRAME_H
 #define MAINFRAME_H
+
+#include <vx/core/vertices.h>
+#include <vx/core/vertices_debug.h>
+#include <vx/core/game.h>
+
 #include "wxcrafter.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".

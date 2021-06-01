@@ -7,8 +7,16 @@ The entity class handles objects in the scene
 
 vxEntity::vxEntity()
 {
-    mesh = new vxMesh();
+    
 }
+
+
+void vxEntity::Init(){
+
+    mesh = new vxMesh();
+    mesh->Init();
+}
+
 
 void vxEntity::Update(){
 

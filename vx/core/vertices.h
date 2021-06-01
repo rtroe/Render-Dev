@@ -1,7 +1,9 @@
 #pragma once
 
+#include <iostream>
 
 #include "../core/vertices_init.h"
+#include "../core/vertices_debug.h"
 #include "../platforms/VerticesEnginePlatforms.h"
 #include "../graphics/graphics.h"
 
@@ -25,9 +27,11 @@ public:
         vxGraphics::Init();
 
 
-//#if PLATFORM_SDL_GL
+//#ifdef VX_SDL
         // first initialise the platform wrapper
         m_context = new VerticesSDLContextWrapper();
+  //      #else
+    //    vxDebug::Log("No Render Context Available");
 //#endif
         return m_context;
     }

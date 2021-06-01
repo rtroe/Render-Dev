@@ -13,10 +13,12 @@ class vxScene
 protected:
     vxCamera *m_camera;
     std::vector<vxEntity*> m_entities;
+    
 public:
     vxScene();
-    void Update();
-    void Draw();
+    vxCamera* GetCamera();
+    virtual void Update();
+    virtual void Draw();
     void AddEntity(vxEntity* entity);
 
 };

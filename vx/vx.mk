@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=roer
-Date                   :=30/05/21
+Date                   :=31/05/21
 CodeLitePath           :=/home/roer/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -50,8 +50,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -g -fPIC $(Preprocessors)
-CFLAGS   :=  -g -fPIC $(Preprocessors)
+CXXFLAGS :=  -g -fPIC -DVX_SDL $(Preprocessors)
+CFLAGS   :=  -g -fPIC -DVX_SDL $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
 
@@ -60,8 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_demo.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_tables.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_glad_src_glad.c$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_widgets.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_scene.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/platforms_VerticesEngineSDLWrapper.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_camera.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_draw.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/components_component.cpp$(ObjectSuffix) \
-	../build-$(ConfigurationName)/vx/core_vertices.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_time.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/graphics_mesh.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_opengl3.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_entity.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/graphics_material.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/graphics_graphics.cpp$(ObjectSuffix) \
+Objects0=../build-$(ConfigurationName)/vx/lib_imgui_imgui_demo.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_tables.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_glad_src_glad.c$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_widgets.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_scene.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/platforms_VerticesEngineSDLWrapper.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_camera.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_draw.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/components_component.cpp$(ObjectSuffix) \
+	../build-$(ConfigurationName)/vx/core_vertices.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_time.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/graphics_mesh.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_opengl3.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/core_entity.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/graphics_material.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/lib_imgui_imgui.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vx/graphics_graphics.cpp$(ObjectSuffix) \
 	../build-$(ConfigurationName)/vx/util_debug.cpp$(ObjectSuffix) 
 
 
@@ -94,14 +94,6 @@ PreBuild:
 ##
 ## Objects
 ##
-../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(ObjectSuffix): entities/vxEditorGrid.cpp ../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/entities/vxEditorGrid.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/entities_vxEditorGrid.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(DependSuffix): entities/vxEditorGrid.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(DependSuffix) -MM entities/vxEditorGrid.cpp
-
-../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(PreprocessSuffix): entities/vxEditorGrid.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/entities_vxEditorGrid.cpp$(PreprocessSuffix) entities/vxEditorGrid.cpp
-
 ../build-$(ConfigurationName)/vx/lib_imgui_imgui_demo.cpp$(ObjectSuffix): lib/imgui/imgui_demo.cpp ../build-$(ConfigurationName)/vx/lib_imgui_imgui_demo.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/imgui_demo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/lib_imgui_imgui_demo.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/vx/lib_imgui_imgui_demo.cpp$(DependSuffix): lib/imgui/imgui_demo.cpp
@@ -133,6 +125,14 @@ PreBuild:
 
 ../build-$(ConfigurationName)/vx/lib_imgui_imgui_widgets.cpp$(PreprocessSuffix): lib/imgui/imgui_widgets.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/lib_imgui_imgui_widgets.cpp$(PreprocessSuffix) lib/imgui/imgui_widgets.cpp
+
+../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(ObjectSuffix): entities/editor/EditorGrid.cpp ../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/entities/editor/EditorGrid.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/entities_editor_EditorGrid.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(DependSuffix): entities/editor/EditorGrid.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(DependSuffix) -MM entities/editor/EditorGrid.cpp
+
+../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(PreprocessSuffix): entities/editor/EditorGrid.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/entities_editor_EditorGrid.cpp$(PreprocessSuffix) entities/editor/EditorGrid.cpp
 
 ../build-$(ConfigurationName)/vx/core_scene.cpp$(ObjectSuffix): core/scene.cpp ../build-$(ConfigurationName)/vx/core_scene.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/core/scene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/core_scene.cpp$(ObjectSuffix) $(IncludePath)
@@ -206,6 +206,14 @@ PreBuild:
 ../build-$(ConfigurationName)/vx/graphics_mesh.cpp$(PreprocessSuffix): graphics/mesh.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/graphics_mesh.cpp$(PreprocessSuffix) graphics/mesh.cpp
 
+../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix): lib/imgui/backends/imgui_impl_sdl.cpp ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends/imgui_impl_sdl.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(DependSuffix): lib/imgui/backends/imgui_impl_sdl.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(DependSuffix) -MM lib/imgui/backends/imgui_impl_sdl.cpp
+
+../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(PreprocessSuffix): lib/imgui/backends/imgui_impl_sdl.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(PreprocessSuffix) lib/imgui/backends/imgui_impl_sdl.cpp
+
 ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_opengl3.cpp$(ObjectSuffix): lib/imgui/backends/imgui_impl_opengl3.cpp ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_opengl3.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends/imgui_impl_opengl3.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/lib_imgui_backends_imgui_impl_opengl3.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_opengl3.cpp$(DependSuffix): lib/imgui/backends/imgui_impl_opengl3.cpp
@@ -221,14 +229,6 @@ PreBuild:
 
 ../build-$(ConfigurationName)/vx/core_entity.cpp$(PreprocessSuffix): core/entity.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/core_entity.cpp$(PreprocessSuffix) core/entity.cpp
-
-../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix): lib/imgui/backends/imgui_impl_sdl.cpp ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends/imgui_impl_sdl.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(DependSuffix): lib/imgui/backends/imgui_impl_sdl.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(DependSuffix) -MM lib/imgui/backends/imgui_impl_sdl.cpp
-
-../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(PreprocessSuffix): lib/imgui/backends/imgui_impl_sdl.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vx/lib_imgui_backends_imgui_impl_sdl.cpp$(PreprocessSuffix) lib/imgui/backends/imgui_impl_sdl.cpp
 
 ../build-$(ConfigurationName)/vx/graphics_material.cpp$(ObjectSuffix): graphics/material.cpp ../build-$(ConfigurationName)/vx/graphics_material.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vx/graphics/material.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/graphics_material.cpp$(ObjectSuffix) $(IncludePath)

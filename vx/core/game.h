@@ -15,6 +15,7 @@ protected:
 public:
     vxGame(const char *gameName);
     const char *GetGameName();
-    void Update();
-    void Draw();
+    void AddScene(vxScene* scene);
+    virtual void Update();
+    virtual void Draw();
 };

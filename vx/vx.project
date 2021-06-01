@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="vx" Version="11000" InternalType="Library">
+  <VirtualDirectory Name="ui"/>
   <VirtualDirectory Name="entities">
-    <File Name="entities/vxEditorGrid.cpp"/>
-    <File Name="entities/vxEditorGrid.h"/>
+    <VirtualDirectory Name="editor">
+      <File Name="entities/editor/EditorEntity.h"/>
+      <File Name="entities/editor/EditorGrid.cpp"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="lib">
     <VirtualDirectory Name="imgui">
@@ -77,7 +80,7 @@
       <ResourceCompiler Options=""/>
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-fPIC" C_Options="-g;-fPIC" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+      <Compiler Options="-g;-fPIC;-DVX_SDL" C_Options="-g;-fPIC;-DVX_SDL" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
         <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx"/>
         <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib"/>
@@ -86,6 +89,50 @@
         <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends"/>
       </Compiler>
       <Linker Options="-lSDL2;-lGL;-ldl" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="lib$(ProjectName).so" IntermediateDirectory="$(WorkspacePath)/obj" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/obj" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="CodeLite Makefile Generator"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="DebugUI" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-fPIC;-DWX_UI" C_Options="-g;-fPIC;-DWX_UI" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/glad/include"/>
+        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends"/>
+      </Compiler>
+      <Linker Options="-lGL;-lGLEW;-ldl;$(shell wx-config --libs --debug);`wx-config --libs --gl-libs` -lGL -lGLU -lglut -lstdc++;`wx-config --libs propgrid,core,base`;`wx-config --cxxflags`;`wx-config --libs`;`wx-config --libs aui`;`wx-config --libs std stc`;-lvx -Wl,-rpath=/home/roer/Code/vertices-viewer-cpp/build-DebugUI/lib" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="lib$(ProjectName).so" IntermediateDirectory="$(WorkspacePath)/obj" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/obj" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="CodeLite Makefile Generator"/>

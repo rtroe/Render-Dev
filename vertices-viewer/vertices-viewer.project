@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="vertices-viewer" Version="11000" InternalType="Console">
   <VirtualDirectory Name="vertices-viewer">
+    <File Name="ViewerScene_UI.cpp"/>
+    <File Name="ViewerScene.cpp"/>
+    <File Name="ViewerScene.h"/>
     <File Name="ModelViewerApp.h"/>
     <File Name="ModelViewerApp.cpp"/>
   </VirtualDirectory>

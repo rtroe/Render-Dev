@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 #include "material.h"
 
-static const char *vertex_shader =
+static const char *vert_shader =
     "#version 130\n"
     "in vec3 i_position;\n"
     "in vec4 i_color;\n"
@@ -12,7 +12,7 @@ static const char *vertex_shader =
     "    gl_Position = u_projection_matrix * vec4( i_position, 1.0 );\n"
     "}\n";
 
-static const char *fragment_shader =
+static const char *frag_shader =
     "#version 130\n"
     "in vec4 v_color;\n"
     "out vec4 o_color;\n"
@@ -21,6 +21,16 @@ static const char *fragment_shader =
     "}\n";
 
 vxMaterial::vxMaterial()
+{
+    OnLoadShader();
+}
+
+void vxMaterial::OnLoadShader()
+{
+    LoadShader(vert_shader, frag_shader);
+}
+
+void vxMaterial::LoadShader(const char *vertex_shader, const char *fragment_shader)
 {
     vs = glCreateShader(GL_VERTEX_SHADER);
     fs = glCreateShader(GL_FRAGMENT_SHADER);
@@ -56,6 +66,10 @@ vxMaterial::vxMaterial()
     glUseProgram(program);
 }
 
+void vxMaterial::SetPass()
+{
+    glUseProgram(program);   
+}
 
 void vxMaterial::SetShaderParam(const char *parm, const vx::tfloat fl)
 {

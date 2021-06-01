@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=roer
-Date                   :=30/05/21
+Date                   :=31/05/21
 CodeLitePath           :=/home/roer/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=../build-$(ConfigurationName)/vertices-viewer/main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vertices-viewer/main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(ObjectSuffix) 
 
 
 
@@ -98,6 +98,14 @@ PreBuild:
 ##
 ## Objects
 ##
+../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(ObjectSuffix): ModelViewerApp.cpp ../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vertices-viewer/ModelViewerApp.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ModelViewerApp.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(DependSuffix): ModelViewerApp.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(DependSuffix) -MM ModelViewerApp.cpp
+
+../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(PreprocessSuffix): ModelViewerApp.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(PreprocessSuffix) ModelViewerApp.cpp
+
 ../build-$(ConfigurationName)/vertices-viewer/main.cpp$(ObjectSuffix): main.cpp ../build-$(ConfigurationName)/vertices-viewer/main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vertices-viewer/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/vertices-viewer/main.cpp$(DependSuffix): main.cpp
@@ -106,13 +114,21 @@ PreBuild:
 ../build-$(ConfigurationName)/vertices-viewer/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vertices-viewer/main.cpp$(PreprocessSuffix) main.cpp
 
-../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(ObjectSuffix): ModelViewerApp.cpp ../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vertices-viewer/ModelViewerApp.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ModelViewerApp.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(DependSuffix): ModelViewerApp.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(DependSuffix) -MM ModelViewerApp.cpp
+../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(ObjectSuffix): ViewerScene.cpp ../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vertices-viewer/ViewerScene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ViewerScene.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(DependSuffix): ViewerScene.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(DependSuffix) -MM ViewerScene.cpp
 
-../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(PreprocessSuffix): ModelViewerApp.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vertices-viewer/ModelViewerApp.cpp$(PreprocessSuffix) ModelViewerApp.cpp
+../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(PreprocessSuffix): ViewerScene.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vertices-viewer/ViewerScene.cpp$(PreprocessSuffix) ViewerScene.cpp
+
+../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(ObjectSuffix): ViewerScene_UI.cpp ../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/roer/Code/vertices-viewer-cpp/vertices-viewer/ViewerScene_UI.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ViewerScene_UI.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(DependSuffix): ViewerScene_UI.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(DependSuffix) -MM ViewerScene_UI.cpp
+
+../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(PreprocessSuffix): ViewerScene_UI.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/vertices-viewer/ViewerScene_UI.cpp$(PreprocessSuffix) ViewerScene_UI.cpp
 
 
 -include ../build-$(ConfigurationName)/vertices-viewer//*$(DependSuffix)

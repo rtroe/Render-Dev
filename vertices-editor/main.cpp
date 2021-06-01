@@ -8,6 +8,11 @@
 // Licence:     wxWindows Library Licence, Version 3.1
 ///////////////////////////////////////////////////////////////////////////////
 
+
+#include <vx/core/vertices.h>
+#include <vx/core/vertices_debug.h>
+#include <vx/core/game.h>
+
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
 
@@ -54,12 +59,15 @@ bool MyApp::OnInit()
     if ( !wxApp::OnInit() )
         return false;
 
+    vxDebug::Log("Hello There!!!!");
+
     wxFrame* frame = new MyFrame(NULL,
                                  wxID_ANY,
                                  wxT("wxAUI Sample Application"),
                                  wxDefaultPosition,
                                  wxSize(1376, 766));
     frame->Show();
+
 
     return true;
 }

@@ -10,11 +10,17 @@
       <Project Name="vertices-viewer" ConfigName="Debug"/>
       <Project Name="vertices-editor" ConfigName="Debug"/>
     </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Release" Selected="yes">
+    <WorkspaceConfiguration Name="Release" Selected="no">
       <Environment/>
       <Project Name="vx" ConfigName="Release"/>
       <Project Name="vertices-viewer" ConfigName="Release"/>
       <Project Name="vertices-editor" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="DebugUI" Selected="no">
+      <Environment/>
+      <Project Name="vertices-editor" ConfigName="DebugUI"/>
+      <Project Name="vertices-viewer" ConfigName="Debug"/>
+      <Project Name="vx" ConfigName="DebugUI"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

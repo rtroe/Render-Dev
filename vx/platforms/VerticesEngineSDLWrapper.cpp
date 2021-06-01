@@ -1,4 +1,4 @@
-
+#ifdef VX_SDL
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
@@ -93,6 +93,7 @@ VerticesSDLContextWrapper::VerticesSDLContextWrapper()
 
     // Load Fonts
     //io.Fonts->AddFontFromFileTTF("Content/fonts/Roboto-Light.ttf", 16.0f);
+    
 }
 
 bool VerticesSDLContextWrapper::IsActive()
@@ -109,6 +110,10 @@ void VerticesSDLContextWrapper::Init(vxGame *game)
 
     const char *windowTitle = game->GetGameName();
     SDL_SetWindowTitle(window, windowTitle);
+    
+    #ifdef TEST
+    std::cout<<"HELLO ITS A TEST"<<std::endl;
+    #endif
 }
 
 // Our state
@@ -204,3 +209,4 @@ void VerticesSDLContextWrapper::OnQuit()
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
+#endif

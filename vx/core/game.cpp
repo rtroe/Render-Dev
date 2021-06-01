@@ -8,7 +8,6 @@
 vxGame::vxGame(const char *gameName)
 {
     m_gameName = gameName;
-    m_scenes.push_back(new vxScene());
     vxTime::Init();
 }
 
@@ -16,6 +15,13 @@ const char *vxGame::GetGameName()
 {
     return m_gameName;
 }
+
+
+void vxGame::AddScene(vxScene* scene)
+{
+    m_scenes.push_back(scene);
+}
+
 void vxGame::Update()
 {
     vxTime::Update();

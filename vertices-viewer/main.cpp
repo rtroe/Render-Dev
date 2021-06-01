@@ -4,15 +4,12 @@
 
 #include <vx/core/vertices.h>
 #include <vx/core/vertices_debug.h>
-#include <vx/util/debug.h>
 #include <vx/core/game.h>
-
+#include <vx/util/debug.h>
 #include <vx/components/component.h>
 
 #include "ModelViewerApp.h"
-#include <typeinfo> // operator typeid
-#include <type_traits>
-
+#include "ViewerScene.h"
 
 // Vertices Engine SDL Entry Point
 int main(int, char **)
@@ -26,7 +23,10 @@ int main(int, char **)
 
     // now that we have the window and graphics context configured, lets initialise the game
     auto game = new ModelViewerApp();
+    
     engine->Init(game);
+    
+    game->AddScene(new ViewerScene());
 
     // now begin the game loop
     while (engine->IsActive())

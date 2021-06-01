@@ -9,6 +9,7 @@ The time Class which handles the rate at which the game is rendered
 using namespace std::chrono;
 
 
+double vxTime::time;
 double vxTime::deltaTime;
 
 auto prev = high_resolution_clock::now();
@@ -24,6 +25,12 @@ void vxTime::Update()
         deltaTime=(duration.count() / 1000000000.0f);
         
         prev = high_resolution_clock::now();
+        
+        time+= deltaTime;
+}
+
+double vxTime::GetTime(){
+    return time;
 }
 
 double vxTime::GetDeltaTime(){

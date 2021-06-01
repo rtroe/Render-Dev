@@ -2,6 +2,10 @@
 
 // certain things should exist at the start
 
+#if WX_UI
+#define GL_GLEXT_PROTOTYPES
+#else
+
 // SDL OPENGL INIT Values
 
 
@@ -42,3 +46,6 @@ using namespace gl;
 #else
 #include IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 #endif
+
+
+#endif // -- end of UI config

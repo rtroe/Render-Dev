@@ -95,6 +95,11 @@ static const vx::tfloat g_color_buffer_data[] = {
 
 vxMesh::vxMesh()
 {
+    //Init();
+}
+
+void vxMesh::Init(){
+    
     material = new vxMaterial();
 
     glGenVertexArrays(1, &VertexArrayID);
@@ -116,6 +121,7 @@ vxMesh::vxMesh()
 
 void vxMesh::Draw(const vx::mat4x4 &Projection, const vx::mat4x4 &View)
 { 
+    material->SetPass();
     Model = vx::matrix::rotate(Model, 0.10f * rotateSpeed, vx::vec3(1));
  
  
@@ -123,6 +129,7 @@ void vxMesh::Draw(const vx::mat4x4 &Projection, const vx::mat4x4 &View)
 
     //glUniformMatrix4fv(glGetUniformLocation(program, "u_projection_matrix"), 1, GL_FALSE, &MVP[0][0]);
     material->SetShaderParam("u_projection_matrix", MVP);
+    
 
     // 1rst attribute buffer : vertices
     glEnableVertexAttribArray(0);

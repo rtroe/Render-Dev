@@ -1054,7 +1054,7 @@ wxGLCanvas* MyFrame::CreateRenderCtrl(wxWindow* parent)
     
     int args[] = {WX_GL_RGBA, WX_GL_DOUBLEBUFFER, WX_GL_DEPTH_SIZE, 16, 0};
     
-   auto ctrl = new BasicGLPane((wxPanel*) parent, args);
+   auto ctrl = new RenderViewControl((wxPanel*) parent, args);
     sizer->Add(ctrl, 1, wxEXPAND);
     
     

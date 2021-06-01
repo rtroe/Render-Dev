@@ -10,5 +10,6 @@
 -I/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui
 -I/home/roer/Code/vertices-viewer-cpp/vx/lib/glad/include
 -I/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends
+-DVX_SDL
 -target
 x86_64-linux-gnu
