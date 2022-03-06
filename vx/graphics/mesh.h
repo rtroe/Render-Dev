@@ -23,7 +23,6 @@ The Mesh class defines visual mesh data
 
 class vxMesh
 {
-
 protected:
     vx::mat4x4 Model;
     vxMaterial* material;

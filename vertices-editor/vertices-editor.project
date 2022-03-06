@@ -33,15 +33,15 @@
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall;$(shell wx-config --cflags) " C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/glad/include"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib/imgui"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib/glad/include"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib/imgui/backends"/>
       </Compiler>
-      <Linker Options="$(shell wx-config --libs --debug);`wx-config --libs --gl-libs` -lGL -lGLU -lglut -lstdc++;`wx-config --libs propgrid,core,base`;`wx-config --cxxflags`;`wx-config --libs`;`wx-config --libs aui`;`wx-config --libs std stc`;-lvx -Wl,-rpath=/home/roer/Code/vertices-viewer-cpp/build-Debug/lib" Required="yes">
-        <LibraryPath Value="/home/roer/Code/vertices-viewer-cpp/build-Debug/lib"/>
+      <Linker Options="$(shell wx-config --libs --debug);`wx-config --libs --gl-libs` -lGL -lGLU -lglut -lstdc++;`wx-config --libs propgrid,core,base`;`wx-config --cxxflags`;`wx-config --libs`;`wx-config --libs aui`;`wx-config --libs std stc`;-lvx -Wl,-rpath=/home/roer/Code/Render-Dev/build-Debug/lib" Required="yes">
+        <LibraryPath Value="/home/roer/Code/Render-Dev/build-Debug/lib"/>
       </Linker>
       <ResourceCompiler Options="$(shell wx-config --rcflags)" Required="no"/>
       <General OutputFile="$(ProjectName)" IntermediateDirectory="" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/lib" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
@@ -80,15 +80,15 @@
     <Configuration Name="DebugUI" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall;-fPIC;$(shell wx-config --cflags)" C_Options="-g;-O0;-Wall;-fPIC" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/glad/include"/>
-        <IncludePath Value="/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib/imgui"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib/glad/include"/>
+        <IncludePath Value="/home/roer/Code/Render-Dev/vx/lib/imgui/backends"/>
       </Compiler>
-      <Linker Options="$(shell wx-config --libs --debug);`wx-config --libs --gl-libs` -lGL -lGLU -lglut -lstdc++;`wx-config --libs propgrid,core,base`;`wx-config --cxxflags`;`wx-config --libs`;`wx-config --libs aui`;`wx-config --libs std stc`;-lvx -Wl,-rpath=/home/roer/Code/vertices-viewer-cpp/build-DebugUI/lib" Required="yes">
-        <LibraryPath Value="/home/roer/Code/vertices-viewer-cpp/build-DebugUI/lib"/>
+      <Linker Options="$(shell wx-config --libs --debug);`wx-config --libs --gl-libs` -lGL -lGLU -lglut -lstdc++;`wx-config --libs propgrid,core,base`;`wx-config --cxxflags`;`wx-config --libs`;`wx-config --libs aui`;`wx-config --libs std stc`;-lvx -Wl,-rpath=/home/roer/Code/Render-Dev/build-DebugUI/lib" Required="yes">
+        <LibraryPath Value="/home/roer/Code/Render-Dev/build-DebugUI/lib"/>
       </Linker>
       <ResourceCompiler Options="$(shell wx-config --rcflags)" Required="no"/>
       <General OutputFile="$(ProjectName)" IntermediateDirectory="" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/lib" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>

@@ -11,8 +11,6 @@ The Scene File essentially holds all information to render a scene
 #include "../graphics/mesh.h"
 #include "../entities/editor/EditorEntity.h"
 
-
-
 vxScene::vxScene()
 {
     m_camera = new vxCamera();
@@ -41,6 +39,7 @@ void vxScene::Update()
 void vxScene::Draw()
 {
     m_camera->Render();
+    
     for (auto entity : m_entities)
         entity->Draw(m_camera->Projection, m_camera->View);
         

@@ -1,10 +1,15 @@
 
 #include "ViewerScene.h"
 #include "stdio.h"
+#include <string.h>
+#include <iostream>
+#include <fstream>
+#include <vx/core/vertices.h>
+#include <vx/core/vertices_debug.h>
 
-    void ViewerScene::UIMenuBar()
-    {
-        
+void ViewerScene::UIMenuBar()
+{
+
     if (ImGui::BeginMainMenuBar())
     {
         if (ImGui::BeginMenu("File"))
@@ -29,38 +34,49 @@
         }
         ImGui::EndMainMenuBar();
     }
-    
-    }
-    void ViewerScene::UIMenuBarFile()
+}
+
+void ViewerScene::UIMenuBarFile()
+{
+    // ImGui::MenuItem("(demo menu)", NULL, false, false);
+    // if (ImGui::MenuItem("New")) {}
+    if (ImGui::MenuItem("Open Model", "Ctrl+O"))
     {
-         //ImGui::MenuItem("(demo menu)", NULL, false, false);
-    //if (ImGui::MenuItem("New")) {}
-    if (ImGui::MenuItem("Open", "Ctrl+O")) {
-            char filename[1024];
-            FILE *f = popen("zenity --file-selection", "r");
-            fgets(filename, 1024, f);
-            printf(filename );
-        }
-    if (ImGui::BeginMenu("Open Recent"))
-    {
-        ImGui::MenuItem("fish_hat.c");
-        ImGui::MenuItem("fish_hat.inl");
-        ImGui::MenuItem("fish_hat.h");
-        if (ImGui::BeginMenu("More.."))
-        {
-            ImGui::MenuItem("Hello");
-            ImGui::MenuItem("Sailor");
-            if (ImGui::BeginMenu("Recurse.."))
-            {
-                UIMenuBarFile();
-                ImGui::EndMenu();
-            }
-            ImGui::EndMenu();
-        }
-        ImGui::EndMenu();
+        char filename[1024];
+        FILE *f = popen("zenity --file-selection", "r");
+        fgets(filename, 1024, f);
+
+        // remove the trailing new line character from fgets
+        size_t ln = strlen(filename) - 1;
+        if (*filename && filename[ln] == '\n')
+            filename[ln] = '\0';
+
+        OpenFile(&filename[0]);
     }
-    if (ImGui::MenuItem("Save", "Ctrl+S")) {}
-    if (ImGui::MenuItem("Save As..")) {}
+    // if (ImGui::BeginMenu("Open Recent"))
+    // {
+    //     ImGui::MenuItem("fish_hat.c");
+    //     ImGui::MenuItem("fish_hat.inl");
+    //     ImGui::MenuItem("fish_hat.h");
+    //     if (ImGui::BeginMenu("More.."))
+    //     {
+    //         ImGui::MenuItem("Hello");
+    //         ImGui::MenuItem("Sailor");
+    //         if (ImGui::BeginMenu("Recurse.."))
+    //         {
+    //             UIMenuBarFile();
+    //             ImGui::EndMenu();
+    //         }
+    //         ImGui::EndMenu();
+    //     }
+    //     ImGui::EndMenu();
+    // }
+    // if (ImGui::MenuItem("Save", "Ctrl+S"))
+    // {
+    // }
+    // if (ImGui::MenuItem("Save As.."))
+    // {
+    // }
 
     ImGui::Separator();
     if (ImGui::BeginMenu("Options"))
@@ -84,7 +100,7 @@
         float sz = ImGui::GetTextLineHeight();
         for (int i = 0; i < ImGuiCol_COUNT; i++)
         {
-            const char* name = ImGui::GetStyleColorName((ImGuiCol)i);
+            const char *name = ImGui::GetStyleColorName((ImGuiCol)i);
             ImVec2 p = ImGui::GetCursorScreenPos();
             ImGui::GetWindowDrawList()->AddRectFilled(p, ImVec2(p.x + sz, p.y + sz), ImGui::GetColorU32((ImGuiCol)i));
             ImGui::Dummy(ImVec2(sz, sz));
@@ -108,27 +124,38 @@
     {
         IM_ASSERT(0);
     }
-    if (ImGui::MenuItem("Checked", NULL, true)) {}
-    if (ImGui::MenuItem("Quit", "Alt+F4")) {}
-        
-    }
-    void ViewerScene::UIMenuBarEdit()
+    if (ImGui::MenuItem("Checked", NULL, true))
     {
-            if (ImGui::MenuItem("Undo", "CTRL+Z")) {}
-            if (ImGui::MenuItem("Redo", "CTRL+Y", false, false)) {}  // Disabled item
-            ImGui::Separator();
-            if (ImGui::MenuItem("Cut", "CTRL+X")) {}
-            if (ImGui::MenuItem("Copy", "CTRL+C")) {}
-            if (ImGui::MenuItem("Paste", "CTRL+V")) {}
-        
     }
-    void ViewerScene::UIMenuBarView()
+    if (ImGui::MenuItem("Quit", "Alt+F4"))
     {
-        ImGui::MenuItem("Camera Controls", NULL, &m_uiIsCameraControlEnabled);
-        ImGui::Separator();
-        ImGui::MenuItem("imgui demo window", NULL, &m_uiShowDemoScene);
     }
-    void ViewerScene::UIMenuBarAbout()
+}
+void ViewerScene::UIMenuBarEdit()
+{
+    if (ImGui::MenuItem("Undo", "CTRL+Z"))
     {
-        
     }
+    if (ImGui::MenuItem("Redo", "CTRL+Y", false, false))
+    {
+    } // Disabled item
+    ImGui::Separator();
+    if (ImGui::MenuItem("Cut", "CTRL+X"))
+    {
+    }
+    if (ImGui::MenuItem("Copy", "CTRL+C"))
+    {
+    }
+    if (ImGui::MenuItem("Paste", "CTRL+V"))
+    {
+    }
+}
+void ViewerScene::UIMenuBarView()
+{
+    ImGui::MenuItem("Camera Controls", NULL, &m_uiIsCameraControlEnabled);
+    ImGui::Separator();
+    ImGui::MenuItem("imgui demo window", NULL, &m_uiShowDemoScene);
+}
+void ViewerScene::UIMenuBarAbout()
+{
+}

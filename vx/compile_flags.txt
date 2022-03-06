@@ -5,11 +5,11 @@
 -I/usr/local/include
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
--I/home/roer/Code/vertices-viewer-cpp/vx
--I/home/roer/Code/vertices-viewer-cpp/vx/lib
--I/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui
--I/home/roer/Code/vertices-viewer-cpp/vx/lib/glad/include
--I/home/roer/Code/vertices-viewer-cpp/vx/lib/imgui/backends
+-I/home/roer/Code/Render-Dev/vx
+-I/home/roer/Code/Render-Dev/vx/lib
+-I/home/roer/Code/Render-Dev/vx/lib/imgui
+-I/home/roer/Code/Render-Dev/vx/lib/glad/include
+-I/home/roer/Code/Render-Dev/vx/lib/imgui/backends
 -DVX_SDL
 -target
 x86_64-linux-gnu

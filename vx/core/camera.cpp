@@ -45,7 +45,7 @@ void vxCamera::Update(){
     float speed = 0.125f;
     
     View = vx::matrix::lookAt(
-        vx::vec3(rad * cos(vxTime::GetTime() * speed), 3, -rad * sin(vxTime::GetTime() * speed)), // Camera is at (4,3,-3), in World Space
+        vx::vec3(rad * cos(vxTime::GetTime() * speed), cos(vxTime::GetTime() * speed * 4), -rad * sin(vxTime::GetTime() * speed)), // Camera is at (4,3,-3), in World Space
         vx::vec3(0, 0, 0),  // and looks at the origin
         vx::vec3(0, 1, 0)   // Head is up (set to 0,-1,0 to look upside-down)
 );

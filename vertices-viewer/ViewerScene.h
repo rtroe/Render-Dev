@@ -15,6 +15,9 @@ public:
     ~ViewerScene();
     
     void Update();
+
+    // -- io calls --
+    void OpenFile(const char* fileName);
     
     // -- ui calls --
     
@@ -26,4 +29,3 @@ public:
     void UIMenuBarAbout();
     
 };
-
